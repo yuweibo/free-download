@@ -6,7 +6,7 @@ on:
     branches: [ main ]
   workflow_dispatch:
 jobs:
-  download:
+  transfer:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -14,10 +14,6 @@ jobs:
         run: |
           curl -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.13.2-linux-x86_64.tar.gz
           ls
-  upload:
-    runs-on: ubuntu-latest
-    environment: transfer
-    steps:
       - uses: actions/setup-python@v3.1.2
       - name: install cos
         run: |
