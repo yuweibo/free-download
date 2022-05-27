@@ -25,6 +25,11 @@ jobs:
           pip install coscmd
           pip install coscmd -U
       - name: config cos
+        env:
+          COS_A: ${{ secrets.COS_A }}
+          COS_S: ${{ secrets.COS_S }}
+          COS_B: ${{ secrets.COS_B }}
+          COS_R: ${{ secrets.COS_R }}
         run : |
           coscmd config -a "$COS_A" -s "$COS_S" -b "$COS_B" -r "$COS_R"
           coscmd upload  elasticsearch-7.13.2-linux-x86_64.tar.gz /wall-download/elasticsearch-7.13.2-linux-x86_64.tar.gz
