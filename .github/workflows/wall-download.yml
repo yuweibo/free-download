@@ -16,6 +16,7 @@ jobs:
           ls
   upload:
     runs-on: ubuntu-latest
+    environment: transfer
     steps:
       - uses: actions/setup-python@v3.1.2
       - name: install cos
