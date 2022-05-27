@@ -8,6 +8,7 @@ on:
 jobs:
   transfer:
     runs-on: ubuntu-latest
+    environment: transfer
     steps:
       - uses: actions/checkout@v3
       - name: Run a multi-line script
