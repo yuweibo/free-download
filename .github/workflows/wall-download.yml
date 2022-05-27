@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  download:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -30,4 +30,8 @@ jobs:
         run: |
           curl -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.13.2-linux-x86_64.tar.gz
           ls
-          curl  -XPOST -F "filename=@elasticsearch-7.13.2-linux-x86_64.tar.gz" http://49.232.11.24:10001/upload
+      - uses: actions/setup-python@v3.1.2
+      - name: install cos
+        run: |
+          pip install coscmd
+          pip install coscmd -U
