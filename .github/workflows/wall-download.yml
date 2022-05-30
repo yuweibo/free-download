@@ -30,4 +30,5 @@ jobs:
         run : |
           echo "$COS_R"
           coscmd config -a "$COS_A" -s "$COS_S" -b "$COS_B" -r "$COS_R"
+          cat /home/runner/.cos.conf
           coscmd upload  elasticsearch-7.13.2-linux-x86_64.tar.gz /wall-download/elasticsearch-7.13.2-linux-x86_64.tar.gz
