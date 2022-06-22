@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Run a multi-line script
         run: |
-          curl -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.13.2-linux-x86_64.tar.gz
+          curl -O https://dlcdn.apache.org/flink/flink-1.12.7/flink-1.12.7-bin-scala_2.12.tgz
           ls
       - uses: actions/setup-python@v3.1.2
       - name: install cos
@@ -31,4 +31,4 @@ jobs:
           echo "$COS_R"
           coscmd config -a "$COS_A" -s "$COS_S" -b "$COS_B" -r "$COS_R"
           cat /home/runner/.cos.conf
-          coscmd upload  elasticsearch-7.13.2-linux-x86_64.tar.gz /wall-download/elasticsearch-7.13.2-linux-x86_64.tar.gz
+          coscmd upload  flink-1.12.7-bin-scala_2.12.tgz /wall-download/flink-1.12.7-bin-scala_2.12.tgz
